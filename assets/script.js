@@ -1,0 +1,1 @@
+var startBtn = $("start-button");
