@@ -10,10 +10,15 @@ var showQ = document.getElementById("questions");
 var displayQ = document.getElementById("continueQ");
 var ifCorrect = document.getElementById("roW");
 var end = document.getElementById("endPage");
-var initials = document.getElementById("initials");
+var initials1 = document.getElementById("initials");
 var button5 = document.getElementById("clearButton");
 var button6 = document.getElementById("homebutton");
+var button7 = document.getElementById("submit-button");
 var displayI = document.getElementById("display-int");
+var displayHS= document.getElementById("highScore");
+var endQuote = document.getElementById("ending");
+var HSquote = document.getElementById("highScorePostInt");
+var HSquote2 = document.getElementById("highScorePostTime");
 var userAns;
 
 var showHS = document.getElementById("highScore");
@@ -21,9 +26,18 @@ var showHS = document.getElementById("highScore");
 var timerCount;
 var timer;
 var i = 0;
-var initialL = localStorage.getItem("int");
-
-
+var initialL;
+JSON.parse(localStorage.getItem("int"));
+var timerMem;
+JSON.parse(localStorage.getItem("time"));
+var highScoreArrayInt=[];
+var highScoreArrayTime=[];
+if(JSON.parse(localStorage.getItem("time"))){
+    highScoreArrayTime = JSON.parse(localStorage.getItem("time"));
+}
+if(JSON.parse(localStorage.getItem("int"))){
+    highScoreArrayInt = JSON.parse(localStorage.getItem("int"));
+}
 var questionArray = [
     {
         question: "Commonly used Data types does NOT inclue",
@@ -84,6 +98,10 @@ function startTimer() {
         timerEle.textContent = timerCount
     }, 1000)
 }
+function stoptimer() {
+    clearInterval(timer);
+    timerEle.style.visibility = 'hidden';
+}
 
 
 
@@ -108,28 +126,29 @@ function compare(e) {
         displayQ.style.visibility = 'hidden';
         end.style.visibility = 'visible';
         stoptimer();
-        timerCount
+        timerMem = timerEle.textContent;
+        highScoreArrayTime.push(timerMem);
+        localStorage.setItem("time",JSON.stringify(highScoreArrayTime));
         ending();
     }
     ifCorrect.style.visibility = 'visible';
 
 }
 
-function stoptimer() {
-    clearInterval(timer);
-    timerEle.style.visibility = 'hidden';
-}
 
 function ending() {
-    ifCorrect.style.visibility = 'hidden';
-    let endstatement = document.createElement("div");
-    endstatement = "Good Job! your score is" + "" + timerCount;
-    initialL = initials.value;
-    localStorage.setItem("int", initialL);
-    displayI.textContent = initialL;
+    setInterval(function(){ ifCorrect.style.visibility = 'hidden';},1000);
+    
+    endQuote.textContent = "Good Job! your score is" + " " + timerMem;
 
 }
-
+function getInitials(){
+    console.log(initials1);
+    initialL = initials1.value;
+    highScoreArrayInt.push(initialL);
+    localStorage.setItem("int", JSON.stringify(highScoreArrayInt));
+    displayI.textContent = initialL + " " + timerMem;
+}
 function clear() {
     localStorage.clear();
     localStorage.removeItem("int");
@@ -139,6 +158,14 @@ function returnHome() {
     location.reload();
 
 }
+function highScorePage(){
+    showHS.style.visibility= 'visible';
+    HSquote.textContent = highScoreArrayInt;
+    HSquote2.textContent = highScoreArrayTime;
+
+}
+displayHS.addEventListener("click", highScorePage);
 startBtn.addEventListener("click", startQuiz);
 button5.addEventListener("click", clear);
 button6.addEventListener("click", returnHome);
+button7.addEventListener("click", getInitials);
