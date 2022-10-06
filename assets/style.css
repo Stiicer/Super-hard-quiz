@@ -3,40 +3,44 @@
 }
 header{
 background-color: rgba(116, 116, 189, 0.801);
+padding: 25px;
+border-radius: 10px 10px;
 
 }
 body{
-    display: flex;
+    display:block;
+    
     flex-wrap: wrap;
     justify-content: center;
     background-color: blanchedalmond;
     box-shadow: 10px 10px rgba(196, 191, 191, 0.959) ;
     border-radius: 10px 10px;
-    margin: 5% 5% 5%;
-    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px;
     border: 2px solid rgb(0, 0, 0);
     text-align: center;
     font-size: 15pt;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 5%;
 }
 .qbutton{
     text-align: center;
     color:rgba(116, 116, 189, 0.801);
-
-
-
-
 }
 #continueQ{
  visibility: hidden;
-
 }
 #roW{
-
     visibility: hidden;
 }
 #endPage{
     visibility: hidden;
+}
+#postHS{
 
+    font-size: larger;
+    font-weight: bold;
+    color:purple;
+    text-decoration: underline;
 }
