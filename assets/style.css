@@ -1,3 +1,33 @@
+*{
+    box-sizing: border-box;
+}
 header{
-background-color: rgba(40, 40, 168, 0.801);
+background-color: rgba(116, 116, 189, 0.801);
+
+}
+body{
+font-family: arial;  
+
+
+
+}
+.qbutton{
+    text-align: center;
+    color:rgba(116, 116, 189, 0.801);
+
+
+
+
+}
+#continueQ{
+ visibility: hidden;
+
+}
+#roW{
+
+    visibility: hidden;
+}
+#endPage{
+    visibility: hidden;
+
 }

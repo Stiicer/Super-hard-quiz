@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Coding Quiz!</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class= "large-font">Coding Quiz</div>
-      <button class="start-button">Start</button>
-    </header>
-        
+</head>
 
+<body>
+    <header>
+        <div id="Title">Coding Quiz</div>
+        <div id="timer"></div>
+    </header>
+    <section id="highScore">
+        <div id="hSPage">
+            <div id="postHS">View highScore
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <section>
+        <div id="start-text">Try to answer the questions correctly within the time limit. Any incorrect answers will
+            take off 10 seconds</div>
+        <button id="start-button">Start</button>
+
+    </section>
+
+    <section id="continueQ">
+
+        <div id="questions"></div>
+        <section id="button-cont">
+            <button id="qbutton1"></button>
+            <button id="qbutton2"></button>
+            <button id="qbutton3"></button>
+            <button id="qbutton4"></button>
+        </section>
+        <hr>
+        <div id="roW"></div>
+    </section>
+
+    <section id="endPage">
+
+        <form id="initials">
+            <div id="form-row">
+                <div id="col">
+                    <input type="text" id="initials" placeholder="enter your initials">
+                    <button type="submit" id="submit-button">Submit</button>
+                    <div id="display-int"></div>
+                </div>
+
+        </form>
+        <button id="clearButton">Reset</button>
+        <button id="homebutton">Return Home</button>
+
+    </section>
 
 
 
 
 
     <script src="assets/script.js"></script>
-  </body>
+</body>
+
 </html>
