@@ -26,7 +26,7 @@ This website displays a quiz that will test their knowledge over various coding 
 
 ## Screenshot
 
-[screenshot](./assets/screenshotquiz.jpg "Screenshot of website")
+[screenshot](./assets/screenshotquiz.png "Screenshot of website")
 
 
 ## Credits
