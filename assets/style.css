@@ -23,20 +23,13 @@ body{
 .qbutton{
     text-align: center;
     color:rgba(116, 116, 189, 0.801);
-
-
-
-
 }
 #continueQ{
  visibility: hidden;
-
 }
 #roW{
-
     visibility: hidden;
 }
 #endPage{
     visibility: hidden;
-
 }
